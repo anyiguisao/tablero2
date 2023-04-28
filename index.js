@@ -4,7 +4,7 @@ class Excel{
     }
 
     header(){
-        return this.content[0,length]
+        return this.content[0]
     }
     rows(){
         return new RowCollection(this.content.slice(1,this.content.length))
@@ -56,6 +56,11 @@ class Row{
     image(){
         return this.row[4]
     }
+    todo(){
+        return this.row[5]
+    }
+     
+    
     // aqui podemos encapsular la logica con la infomacion pricipal de la tabla
     //por si el sistema crece poder tener una mejor lectutra del codigo y poder
     // trabaja la logica a la clase que le opertenece
@@ -79,6 +84,7 @@ class ExcelPrinter{
                 <td>${row.apellido()}</td>
                 <td>${row.ciudad()}</td>
                 <td>${row.edad()}</td>
+                <td>${row.todo()}</td>
             </tr>
             <img`
             
